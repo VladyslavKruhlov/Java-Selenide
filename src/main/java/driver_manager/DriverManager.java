@@ -1,5 +1,4 @@
 package driver_manager;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public class DriverManager {
     private static WebDriver webDriver;
 
-    public DriverManager(){};
+    public DriverManager(){}
 
     public static WebDriver getDriver(){
         String browserName = System.getProperty("browserName", "chrome");
@@ -29,7 +28,7 @@ public class DriverManager {
     public static WebDriver getDriver(Browsers browser){
         switch (browser){
             case CHROME: {
-                WebDriverManager.chromedriver().setup();
+                //WebDriverManager.chromedriver().setup();
                 webDriver = new ChromeDriver();
                 webDriver.manage().window().maximize();
                 webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -37,7 +36,7 @@ public class DriverManager {
                 return webDriver;
             }
             case FIREFOX: {
-                WebDriverManager.firefoxdriver().setup();
+                //WebDriverManager.firefoxdriver().setup();
                 webDriver = new FirefoxDriver();
                 webDriver.manage().window().maximize();
                 webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -45,7 +44,7 @@ public class DriverManager {
                 return webDriver;
             }
             case SAFARI: {
-                WebDriverManager.safaridriver().setup();
+                //WebDriverManager.safaridriver().setup();
                 webDriver = new SafariDriver();
                 webDriver.manage().window().maximize();
                 webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import page_object.pages.the_internet.MainPageTheInternet;
 
 import static com.codeborne.selenide.Selenide.open;
-import static page_object.Constants.*;
+import static page_object.Constants.URL_THE_INTERNET;
 
 public class AddRemoveElementsMassAction extends BaseTest {
 

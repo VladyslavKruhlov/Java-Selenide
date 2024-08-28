@@ -30,7 +30,7 @@
                 <version>3.3.0</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>/src/test/resources/test_suite/test_suite_for_the_internet.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/test_suite/test_suite_for_the_internet.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

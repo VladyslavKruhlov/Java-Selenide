@@ -1,6 +1,7 @@
 package page_object.pages.the_internet;
 
 import com.codeborne.selenide.WebDriverRunner;
+import io.qameta.allure.Step;
 import page_object.locators.the_intennet.MainPageLocatorsTheInternet;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -10,6 +11,7 @@ import static page_object.Constants.*;
 
 public class MainPageTheInternet {
 
+    @Step("Check that homePage is displayed")
     public MainPageTheInternet checkHomePage() {
         assertEquals(WebDriverRunner.url(), URL_THE_INTERNET);
         $(MainPageLocatorsTheInternet.MAIN_TITLE_TEXT)
@@ -21,6 +23,7 @@ public class MainPageTheInternet {
         return this;
     }
 
+    @Step("Check redirection to add/remove element page")
     public AddRemoveElementsPage checkRedirectToAddRemovePage() {
         $(MainPageLocatorsTheInternet.ADD_REMOVE_ELEMENTS_REDIRECT)
                 .shouldBe(visible);

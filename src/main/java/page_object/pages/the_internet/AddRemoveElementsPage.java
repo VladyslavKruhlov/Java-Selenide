@@ -2,6 +2,7 @@ package page_object.pages.the_internet;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import page_object.locators.the_intennet.AddRemovePageLocatorsTheInternet;
 
@@ -15,19 +16,20 @@ import static page_object.Constants.*;
 import static page_object.locators.the_intennet.AddRemovePageLocatorsTheInternet.*;
 
 public class AddRemoveElementsPage {
+    @Step("Check that page contains add/remove buttons")
     public AddRemoveElementsPage checkAddRemoveElementsPage(){
         assertEquals(WebDriverRunner.url() , URL_THE_INTERNET_AFTER_REDIRECTION);
         $(AddRemovePageLocatorsTheInternet.ADD_REMOVE_PAGE_TITLE_TEXT).shouldBe(visible);
         assertEquals($(AddRemovePageLocatorsTheInternet.ADD_REMOVE_PAGE_TITLE_TEXT).getText(), THE_INTERNET_ADD_REMOVE_PAGE_TITLE);
         return this;
     }
-
+    @Step("Check that remove button is not displayed")
     public AddRemoveElementsPage checkCountOfRemovedElementsAfterRemoving(){
         boolean removeElementsFound = ($(REMOVE_ELEMENT_BUTTON).exists());
         assertFalse(removeElementsFound);
         return this;
     }
-
+    @Step("add several elements and remove several elements")
     public AddRemoveElementsPage addAndRemoveElements(int i){
         clickToAddElementsButton(i);
         checkCountOfRemovedElements(i);
@@ -72,7 +74,7 @@ public class AddRemoveElementsPage {
         }
         return this;
     }
-
+    @Step("Click to add element button")
     public AddRemoveElementsPage clickToAddElementsButton(){
         $(AddRemovePageLocatorsTheInternet.ADD_ELEMENT_BUTTON)
                 .shouldBe(visible);
@@ -81,7 +83,7 @@ public class AddRemoveElementsPage {
                 .click();
         return this;
     }
-
+    @Step("Click to remove element button")
     public AddRemoveElementsPage clickToRemoveElementsButton(){
         $(AddRemovePageLocatorsTheInternet.REMOVE_ELEMENT_BUTTON)
                 .shouldBe(visible);

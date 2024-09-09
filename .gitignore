@@ -5,6 +5,9 @@ target/
 
 ### IntelliJ IDEA ###
 .idea
+.allure
+allure-results
+build
 *.iws
 *.iml
 *.ipr

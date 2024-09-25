@@ -1,19 +1,18 @@
 package base_test;
 
-import driver_manager.DriverManager;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import com.codeborne.selenide.WebDriverRunner;
+import driver_manager.SetUp;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
-    protected WebDriver webDriver;
-    @BeforeClass
-    public void setUp(){
-        webDriver = DriverManager.getDriver();
+    @BeforeMethod
+    public void setUp() {
+        SetUp.setUp();
     }
 
-    @AfterClass
-    public void closeDriver(){
-        DriverManager.quitDriver();
+    @AfterMethod
+    public void tearDown(){
+        WebDriverRunner.closeWebDriver();
     }
 }

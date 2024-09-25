@@ -8,8 +8,7 @@ import page_object.pages.the_internet.MainPageTheInternet;
 import static page_object.Constants.*;
 import static page_object.common.CommonMethods.openPage;
 
-public class AddRemoveElementsSingleAction extends BaseTest {
-
+public class AddRemoveElementsSingleAction extends BaseTest{
     @Test(groups = "TheInternet", description = "Add/remove elements single action")
     @Owner("v.kruhlov")
     @Description("Check that add element button works and after check that delete button works")

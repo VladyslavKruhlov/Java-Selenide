@@ -5,11 +5,10 @@ import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import page_object.pages.the_internet.MainPageTheInternet;
 
-import static page_object.Constants.URL_THE_INTERNET;
+import static page_object.Constants.*;
 import static page_object.common.CommonMethods.openPage;
 
 public class AddRemoveElementsMassAction extends BaseTest {
-
     @Test(groups = "TheInternet", description = "Add/remove elements mass action")
     @Owner("v.kruhlov")
     @Description("Check that add elements button works and after check that delete button works")
